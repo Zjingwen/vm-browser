@@ -1,0 +1,16 @@
+{
+  "name": "vm-browser",
+  "version": "1.0.0",
+  "description": "在node的vm.js环境中，模拟browset api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Zjingwen",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7",
+    "node-inspect": "^2.0.0",
+    "vm2": "^3.9.13"
+  }
+}

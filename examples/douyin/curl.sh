@@ -1,0 +1,16 @@
+curl 'https://www.douyin.com/aweme/v1/web/discover/search/?device_platform=webapp&aid=6383&channel=channel_pc_web&search_channel=aweme_user_web&keyword=123456&search_source=normal_search&query_correct_type=1&is_filter_search=0&from_group_id=&offset=0&count=8&pc_client_type=1&version_code=170400&version_name=17.4.0&cookie_enabled=true&screen_width=1680&screen_height=1050&browser_language=zh-CN&browser_platform=MacIntel&browser_name=Chrome&browser_version=104.0.0.0&browser_online=true&engine_name=Blink&engine_version=104.0.0.0&os_name=Mac+OS&os_version=10.15.7&cpu_core_num=12&device_memory=8&platform=PC&downlink=10&effective_type=4g&round_trip_time=150&webid=7185161083740554789&msToken=&X-Bogus=' \
+  -H 'authority: www.douyin.com' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7,ja;q=0.6,de;q=0.5,ro;q=0.4,da;q=0.3,pl;q=0.2,und;q=0.1' \
+  -H 'cache-control: no-cache' \
+  -H 'cookie: s_v_web_id=verify_lcj4vaiv_8JRzNdjF_RIrd_4Gw8_BKST_Ami3iCXail48' \
+  -H 'pragma: no-cache' \
+  -H 'referer: https://www.douyin.com/search/' \
+  -H 'sec-ch-ua: "Chromium";v="104", " Not A;Brand";v="99", "Google Chrome";v="104"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36' \
+  --compressed

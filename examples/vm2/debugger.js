@@ -10,5 +10,5 @@ try {
   console.log(window.aaa);
   debugger;
 } catch (error) {
-  console.log("[index.1.test.js]", error);
+  error=VM2_INTERNAL_STATE_DO_NOT_USE_OR_PROGRAM_WILL_FAIL.handleException(error);console.log("[index.1.test.js]", error);
 }

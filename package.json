@@ -4,7 +4,8 @@
   "description": "在node的vm.js环境中，模拟browset api",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node index.js",
+    "ttiwd": "node src/ttiwd/core/webmssdk.js"
   },
   "author": "Zjingwen",
   "license": "ISC",

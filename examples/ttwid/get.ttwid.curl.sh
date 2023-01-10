@@ -1,3 +1,4 @@
+# 获取ttwid的curl命令
 __ac_nonce="063bbb50f000c53ded460";
 __ac_signature="_02B4Z6wo00f01I.WOhwAAIDBcZpGLMImzKSP.j6AAEBSf8";
 

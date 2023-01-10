@@ -1,26 +1,3 @@
-console.log("hook");
-
-function hookProxy(e, title = "hookProxy") {
-  return new Proxy(e, {
-    set(target, property, value) {
-      console.log(`[${title}] set`, target, property, value);
-      return Reflect.set(...arguments);
-    },
-    get(target, property) {
-      console.group(`[${title}] set`);
-      console.log(target);
-      console.log(property);
-      console.log(target[property]);
-      console.groupEnd();
-      return target[property];
-    },
-  });
-}
-
-Object = hookProxy(Object, "Object");
-Function = hookProxy(Function, "Function");
-document = hookProxy(document, "Object");
-
 try {
   var glb;
   ((glb = "undefined" == typeof window ? global : window)._$jsvmprt = function (

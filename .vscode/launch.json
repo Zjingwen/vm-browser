@@ -22,6 +22,16 @@
             ],
             "runtimeExecutable": "node-inspect",
             "program": "${workspaceFolder}/index.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "node-inspect vm 环境",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "runtimeExecutable": "node-inspect",
+            "program": "${workspaceFolder}/examples/ttwid/vm.js"
         }
     ]
 }

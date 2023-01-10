@@ -5,7 +5,6 @@ try {
     e,
     f
   ) {
-    window._$jsvmprt = hookProxy(window._$jsvmprt, "_$jsvmprt");
     function a() {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;

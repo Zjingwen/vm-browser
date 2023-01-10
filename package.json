@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.js",
-    "ttiwd": "node src/ttiwd/core/webmssdk.js"
+    "ttiwd:b": "node src/ttiwd/index.b.js",
+    "ttiwd:s": "node src/ttiwd/index.s.js",
+    "ttiwd:vm": "node src/ttiwd/index.vm.js",
+    "ttiwd:rollup": "rollup -c -w"
   },
   "author": "Zjingwen",
   "license": "ISC",

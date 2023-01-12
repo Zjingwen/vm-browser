@@ -13,6 +13,9 @@
   "author": "Zjingwen",
   "license": "ISC",
   "dependencies": {
+    "@babel/generator": "^7.20.7",
+    "@babel/parser": "^7.20.7",
+    "@babel/traverse": "^7.20.12",
     "node-fetch": "^2.6.7",
     "node-inspect": "^2.0.0",
     "vm2": "^3.9.13"

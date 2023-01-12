@@ -5389,7 +5389,6 @@ function ac_nonce(__ac_nonce) {
     dfp: 0,
   });
 
-  var __ac_nonce = "063bcdc6a00739c68b7a6";
   var __ac_signature = window.byted_acrawler.sign("", __ac_nonce);
   return __ac_signature;
 }

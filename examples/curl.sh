@@ -1,0 +1,6 @@
+curl 'https://www.douyin.com/aweme/v1/web/aweme/post/?device_platform=webapp&aid=6383&channel=channel_pc_web&sec_user_id=MS4wLjABAAAAuLGv9nn8hGijUBf0u1ITnJKu3tSlny25c7SfYdNKf1v9MZWQk5ARN7iR7mEFzwGl&max_cursor=1656246437000&locate_query=false&show_live_replay_strategy=1&count=10&publish_video_strategy_type=2&pc_client_type=1&version_code=170400&version_name=17.4.0&cookie_enabled=true&screen_width=1920&screen_height=1080&browser_language=zh-CN&browser_platform=MacIntel&browser_name=Chrome&browser_version=104.0.0.0&browser_online=true&engine_name=Blink&engine_version=104.0.0.0&os_name=Mac+OS&os_version=10.15.7&cpu_core_num=12&device_memory=8&platform=PC&downlink=10&effective_type=4g&round_trip_time=100&webid=7186495622520997410&msToken=rBNdNjjnf1q7Dl4I1XHi-QWH5yCKj5BSo64XhtjMNYFcccy16mcLUSNEiGTxlzPj94fW5xivSLQqPJALOrAbpI7XQuow-JspJuea1h4izUw9cwv8_Q4WWhXKaoQ4mw==&X-Bogus=DFSzswVuey2ANnK8SDPJzOKMtapB' \
+  -H 'authority: www.douyin.com' \
+  -H 'cookie: ttwid=1%7CU9-kfEBFKZMaNP09wgfEcWhIhIweOtlCNvTGqapUM_M%7C1673236422%7C8d2485263e0058420990a7d11e95e1909514334a6aef737a89178f6b3e41f5b6;' \
+  -H 'referer: https://www.douyin.com/user/MS4wLjABAAAAuLGv9nn8hGijUBf0u1ITnJKu3tSlny25c7SfYdNKf1v9MZWQk5ARN7iR7mEFzwGl' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36' \
+  --compressed

@@ -1,28 +1,30 @@
-window = this;
-var Window = function Window() {
+import Proxy from "./Proxy.js";
+import Safefunction from "./Safefunction.js";
+
+let window = {};
+
+let Window = function Window() {
   throw new TypeError("Illegal constructor");
 };
-catvm.safefunction(Window);
+
+Safefunction(Window);
+
 Object.defineProperties(Window.prototype, {
   [Symbol.toStringTag]: {
     value: "Window",
     configurable: true,
   },
 });
-let Request = {};
-let Headers = {};
-let navigator = {};
 
-let document = {
-  addEventListener(type, listener, options, useCapture) {
-    console.log("[document.addEventListener]", arguments);
-  },
+////////////////////////  补代码
+
+////////////////////////
+
+window = {
+  __proto__: Window.prototype,
 };
 
-window.setTimeout = function setTimeout(x, d) {
-  console.log(arguments);
-  typeof x == "function" ? x() : undefined;
-  typeof x == "string" ? eval(x) : undefined;
-  return 0;
-};
-location.href = "https://www.douyin.com/discover";
+Window = Proxy(Window);
+window = Proxy(window);
+
+export default window;

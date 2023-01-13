@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "在node的vm.js环境中，模拟browset api",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node index.js",
     "ttiwd:b": "node src/ttiwd/index.b.js",

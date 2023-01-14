@@ -1,6 +1,6 @@
 # 获取ttwid的curl命令
-__ac_nonce="063bcdc6a00739c68b7a6";
-__ac_signature="_02B4Z6wo00f013-n3TgAAIDC1PbnpN6idwt.hdmAALxg49";
+__ac_nonce="063b99cbd00daafe28ecb";
+__ac_signature="_02B4Z6wo00f010e256wAAIDAuEkYU74l0hdHlOMAALI34d";
 
 curl -i 'https://www.douyin.com/discover' \
   -H 'authority: www.douyin.com' \

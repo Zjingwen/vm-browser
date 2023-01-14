@@ -1,8 +1,8 @@
 export default [
   {
-    input: "src/ttiwd/hook.js",
+    input: "src/index.js",
     output: {
-      file: "src/ttiwd/hook.rollup.js",
+      file: "dist/index.esm.js",
       format: "esm",  
     },
   },

@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/index.js"
+            "program": "${workspaceFolder}/src/node.js"
         },
         {
             "type": "node",
@@ -21,17 +21,7 @@
                 "<node_internals>/**"
             ],
             "runtimeExecutable": "node-inspect",
-            "program": "${workspaceFolder}/index.js"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "node-inspect ttiwd 环境",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "runtimeExecutable": "node-inspect",
-            "program": "${workspaceFolder}/src/ttiwd/index.vm.js"
+            "program": "${workspaceFolder}/src/vm.js"
         }
     ]
 }

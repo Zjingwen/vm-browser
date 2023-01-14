@@ -5,11 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node index.js",
-    "ttiwd:b": "node src/ttiwd/index.b.js",
-    "ttiwd:s": "node src/ttiwd/index.s.js",
-    "ttiwd:vm": "node src/ttiwd/index.vm.js",
-    "ttiwd:rollup": "rollup -c -w"
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
   },
   "author": "Zjingwen",
   "license": "ISC",
@@ -19,6 +16,7 @@
     "@babel/traverse": "^7.20.12",
     "node-fetch": "^2.6.7",
     "node-inspect": "^2.0.0",
+    "rollup": "^2.79.1",
     "vm2": "^3.9.13"
   }
 }

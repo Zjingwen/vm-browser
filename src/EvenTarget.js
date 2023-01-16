@@ -1,8 +1,7 @@
 import Safefunction from "./Safefunction";
 import Proxy from "./Proxy";
-var EvenTarget = function EvenTarget() {
-  //构造函数
-};
+
+let EvenTarget = function EvenTarget() {};
 Safefunction(EvenTarget);
 
 Object.defineProperties(EvenTarget.prototype, {

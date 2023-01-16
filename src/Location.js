@@ -1,8 +1,7 @@
 import Proxy from "./Proxy.js";
 import Safefunction from "./Safefunction.js";
 
-var Location = function Location() {
-  //构造函数
+let Location = function Location() {
   throw new TypeError("Illegal constructor");
 };
 Safefunction(Location);
@@ -16,22 +15,15 @@ Object.defineProperties(Location.prototype, {
 
 /////////////////////////////
 
-var location = {};
-location.__proto__ = Location.prototype;
-
-location.href = "https://www.douyin.com/discover";
-location.protocol = "https:";
-
-for (let prototype_ in Location.prototype) {
-  location[prototype_] = Location.prototype[prototype_];
-
-  Location.prototype.__defineGetter__(prototype_, function () {
-    throw new TypeError("Illegal constructor");
-  });
-}
+let location = {
+  href: "https://www.douyin.com/discover",
+  protocol: "https:",
+  __proto__: Location.prototype,
+};
 
 /////////////////////////////
 
-location = Proxy(location);
+location = Proxy(location, "location");
+Location = Proxy(Location, "Location");
 
 export default location;

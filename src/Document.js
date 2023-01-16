@@ -1,9 +1,7 @@
 import Proxy from "./Proxy.js";
 import Safefunction from "./Safefunction.js";
 
-let Document = function Document() {
-  throw new TypeError("Illegal constructor");
-};
+let Document = function Document() {};
 
 Safefunction(Document);
 Object.defineProperties(Document.prototype, {
@@ -16,7 +14,7 @@ Object.defineProperties(Document.prototype, {
 
 ////////////////////////////////
 
-var document = {};
+let document = {};
 document.__proto__ = Document.prototype;
 
 document.referrer = "https://www.douyin.com/discover";

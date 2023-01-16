@@ -117,9 +117,7 @@ window.sessionStorage = Proxy$1(window.sessionStorage, "window.sessionStorage");
 Window = Proxy$1(Window, "Window");
 window = Proxy$1(window, "window");
 
-let Document = function Document() {
-  throw new TypeError("Illegal constructor");
-};
+let Document = function Document() {};
 
 Safefunction(Document);
 Object.defineProperties(Document.prototype, {
@@ -132,7 +130,7 @@ Object.defineProperties(Document.prototype, {
 
 ////////////////////////////////
 
-var document = {};
+let document = {};
 document.__proto__ = Document.prototype;
 
 document.referrer = "https://www.douyin.com/discover";
@@ -141,8 +139,7 @@ document.cookie = "";
 Document = Proxy$1(Document, "Document");
 document = Proxy$1(document, "document");
 
-var Location = function Location() {
-  //构造函数
+let Location = function Location() {
   throw new TypeError("Illegal constructor");
 };
 Safefunction(Location);
@@ -156,23 +153,16 @@ Object.defineProperties(Location.prototype, {
 
 /////////////////////////////
 
-var location = {};
-location.__proto__ = Location.prototype;
-
-location.href = "https://www.douyin.com/discover";
-location.protocol = "https:";
-
-for (let prototype_ in Location.prototype) {
-  location[prototype_] = Location.prototype[prototype_];
-
-  Location.prototype.__defineGetter__(prototype_, function () {
-    throw new TypeError("Illegal constructor");
-  });
-}
+let location = {
+  href: "https://www.douyin.com/discover",
+  protocol: "https:",
+  __proto__: Location.prototype,
+};
 
 /////////////////////////////
 
-location = Proxy$1(location);
+location = Proxy$1(location, "location");
+Location = Proxy$1(Location, "Location");
 
 var Navigator = function Navigator() {
   //构造函数

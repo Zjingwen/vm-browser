@@ -1,4 +1,4 @@
-import window from "../src/Window.core";
+import { window } from "../src/index";
 
 test("new window 对象报错", () => {
   expect(() => {
@@ -13,3 +13,8 @@ test("window 原型链路", () => {
     "[object WindowProperties]"
   );
 });
+
+test("window localStorage",()=>{
+  console.log(window.localStorage);
+  console.log(window.localStorage.getItem);
+})

@@ -12,6 +12,11 @@ const vm = new VM({});
 
 const code = `
 try {
+  var process = {
+    env:{
+      "NODE_ENV": "dev",
+    }
+  }
   ${hook}\r\n
   ${core}\r\n
  debugger;

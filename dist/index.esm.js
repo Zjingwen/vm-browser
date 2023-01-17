@@ -208,45 +208,77 @@ for (let prototype_ in Navigator.prototype) {
 
 navigator = Proxy$1(navigator);
 
-let window = function window() {
-  throw new TypeError("window is not a constructor");
+let Storage$1 = function Storage() {
+  throw new TypeError("Illegal constructor");
 };
-Safefunction(window);
+
+Safefunction(Storage$1);
+
+Object.defineProperties(Storage$1.prototype, {
+  [Symbol.toStringTag]: {
+    value: "Storage",
+    configurable: true,
+  },
+});
+
+Storage$1.prototype.clear = function clear() {
+  debugger;
+};
+Safefunction(Storage$1.prototype.clear);
+
+Storage$1.prototype.getItem = function getItem() {
+  debugger;
+};
+Safefunction(Storage$1.prototype.getItem);
+
+Storage$1.prototype.setItem = function setItem() {
+  debugger;
+};
+Safefunction(Storage$1.prototype.setItem);
+
+Storage$1.prototype.removeItem = function removeItem() {
+  debugger;
+};
+Safefunction(Storage$1.prototype.removeItem);
+
+let window = {};
 window.__proto__ = Window$1.prototype;
 window.Object = Object;
 window.RegExp = RegExp;
 
-window.localStorage = class localStorage {};
-
-window.localStorage.getItem = function getItem() {};
-Safefunction(window.localStorage.getItem);
-
-window.localStorage.setItem = function setItem() {};
-Safefunction(window.localStorage.setItem);
-
-window.localStorage.removeItem = function removeItem() {};
-Safefunction(window.localStorage.removeItem);
+window.localStorage = {
+  __proto__: Storage$1.prototype,
+};
 
 window.localStorage = Proxy$1(window.localStorage, "window.localStorage");
 
-window.sessionStorage = class sessionStorage {};
-
-window.sessionStorage.getItem = function getItem() {};
-Safefunction(window.sessionStorage.getItem);
-
-window.sessionStorage.setItem = function setItem() {};
-Safefunction(window.sessionStorage.setItem);
-
-window.sessionStorage.removeItem = function removeItem() {};
-Safefunction(window.sessionStorage.removeItem);
+window.sessionStorage = {
+  __proto__: Storage$1.prototype,
+};
 
 window.sessionStorage = Proxy$1(window.sessionStorage, "window.sessionStorage");
-
-let Window = Proxy$1(Window$1, "Window");
-Window.prototype = Proxy$1(Window$1.prototype, "Window");
-
-let EventTarget = Proxy$1(EventTarget$1, "EventTargetCore");
-EventTarget.prototype = Proxy$1(EventTarget$1.prototype, "EventTargetCore");
-
 window = Proxy$1(window, "window");
-window.prototype = Proxy$1(window.prototype, "window");
+
+let Window = Window$1;
+Window.prototype = Proxy$1(Window.prototype, "Window");
+Window = Proxy$1(Window, "Window");
+
+let EventTarget = EventTarget$1;
+EventTarget.prototype = Proxy$1(
+  EventTarget.prototype,
+  "EventTargetCore.prototype"
+);
+EventTarget = Proxy$1(EventTarget, "EventTargetCore");
+
+let Storage = Storage$1;
+Storage.prototype = Proxy$1(Storage.prototype, "Storage.prototype");
+Storage = Proxy$1(Storage, "Storage");
+
+if (process.env["NODE_ENV"] == "test") {
+  module.exports = {
+    window,
+    Window,
+    EventTarget,
+    Storage,
+  };
+}

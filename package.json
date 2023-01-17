@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c -w",
-    "test": "jest",
+    "build": "cross-env NODE_ENV=pro rollup -c",
+    "watch": "cross-env NODE_ENV=pro rollup -c -w",
+    "test": "cross-env NODE_ENV=test jest",
     "node": "node ./src/node.js",
     "vm": "node ./src/vm.js"
   },
@@ -17,6 +17,7 @@
     "@babel/generator": "^7.20.7",
     "@babel/parser": "^7.20.7",
     "@babel/traverse": "^7.20.12",
+    "cross-env": "^7.0.3",
     "node-fetch": "^2.6.7",
     "node-inspect": "^2.0.0",
     "rollup": "^2.79.1",

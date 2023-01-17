@@ -7,7 +7,9 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "test": "jest"
+    "test": "jest",
+    "node": "node ./src/node.js",
+    "vm": "node ./src/vm.js"
   },
   "author": "Zjingwen",
   "license": "ISC",

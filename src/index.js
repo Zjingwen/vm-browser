@@ -1,12 +1,12 @@
-import Safefunction from "./Safefunction";
 import Proxy from "./Proxy";
 
 import WindowCore from "./Window.core";
 import EventTargetCore from "./EventTarget.core";
-import document from "./Document";
+import DocumentCore from "./Document.core";
+import HTMLDocumentCore from "./HTMLDocument.core";
 import location from "./Location";
 import navigator from "./Navigator";
-import StorageCore from "./StorageCore";
+import StorageCore from "./Storage.core";
 
 let window = {};
 window.__proto__ = WindowCore.prototype;
@@ -40,6 +40,16 @@ EventTarget = Proxy(EventTarget, "EventTargetCore");
 let Storage = StorageCore;
 Storage.prototype = Proxy(Storage.prototype, "Storage.prototype");
 Storage = Proxy(Storage, "Storage");
+
+let HTMLDocument = {
+  prototype: {
+    __proto__: DocumentCore.prototype,
+  },
+};
+
+let document = {
+  __proto__: HTMLDocumentCore.prototype,
+};
 
 if (process.env["NODE_ENV"] == "test") {
   module.exports = {

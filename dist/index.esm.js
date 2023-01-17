@@ -1,3 +1,32 @@
+function Proxy$1 (o, title = 'Proxy') {
+  return new Proxy(o, {
+    set(target, property, value) {
+      console.table([
+        { 
+          类型: `${title} set-->`, 
+          调用者: target, 
+          属性: property, 
+          值: value 
+        },
+      ]);
+
+      return Reflect.set(...arguments);
+    },
+    get: function (target, property, receiver) {
+      console.table([
+        {
+          类型: `${title} get-->`,
+          调用者: target,
+          属性: property,
+          值: target[property],
+        },
+      ]);
+
+      return target[property];
+    },
+  });
+}
+
 const $toString = Function.toString;
 const myFunction_toString_symbol = Symbol(
   "(".concat("", ")_", (Math.random() + "").toString(36))
@@ -34,35 +63,6 @@ var Safefunction = (func) => {
     }() { [native code] }`
   );
 };
-
-function Proxy$1 (o, title = 'Proxy') {
-  return new Proxy(o, {
-    set(target, property, value) {
-      console.table([
-        { 
-          类型: `${title} set-->`, 
-          调用者: target, 
-          属性: property, 
-          值: value 
-        },
-      ]);
-
-      return Reflect.set(...arguments);
-    },
-    get: function (target, property, receiver) {
-      console.table([
-        {
-          类型: `${title} get-->`,
-          调用者: target,
-          属性: property,
-          值: target[property],
-        },
-      ]);
-
-      return target[property];
-    },
-  });
-}
 
 let EventTarget$1 = function EventTarget() {};
 
@@ -136,18 +136,19 @@ Object.defineProperties(Document.prototype, {
     configurable: true,
   },
 });
-////////////////////////////////
+Document.prototype;
 
-////////////////////////////////
+let HTMLDocument = function HTMLDocument() {
+  throw new TypeError("Illegal constructor");
+};
 
-let document = {};
-document.__proto__ = Document.prototype;
-
-document.referrer = "https://www.douyin.com/discover";
-document.cookie = "";
-
-Document = Proxy$1(Document, "Document");
-document = Proxy$1(document, "document");
+Safefunction(HTMLDocument);
+Object.defineProperties(HTMLDocument.prototype, {
+  [Symbol.toStringTag]: {
+    value: "HTMLDocument",
+    configurable: true,
+  },
+});
 
 let Location = function Location() {
   throw new TypeError("Illegal constructor");
@@ -273,6 +274,16 @@ EventTarget = Proxy$1(EventTarget, "EventTargetCore");
 let Storage = Storage$1;
 Storage.prototype = Proxy$1(Storage.prototype, "Storage.prototype");
 Storage = Proxy$1(Storage, "Storage");
+
+({
+  prototype: {
+    __proto__: Document.prototype,
+  },
+});
+
+({
+  __proto__: HTMLDocument.prototype,
+});
 
 if (process.env["NODE_ENV"] == "test") {
   module.exports = {

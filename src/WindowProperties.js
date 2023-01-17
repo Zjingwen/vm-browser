@@ -1,5 +1,6 @@
 import Safefunction from "./Safefunction";
-import EvenTarget from "./EvenTarget";
+import EventTarget from "./EventTarget.core";
+
 let WindowProperties = function WindowProperties() {};
 
 Safefunction(WindowProperties);
@@ -11,6 +12,7 @@ Object.defineProperties(WindowProperties.prototype, {
   },
 });
 
-WindowProperties.prototype.__proto__ = EvenTarget.prototype;
+WindowProperties.prototype.constructor = EventTarget;
+WindowProperties.prototype.__proto__ = EventTarget.prototype;
 
 export default WindowProperties;

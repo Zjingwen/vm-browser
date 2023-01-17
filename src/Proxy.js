@@ -1,4 +1,3 @@
-//框架代理功能
 export default function (o, title = 'Proxy') {
   return new Proxy(o, {
     set(target, property, value) {

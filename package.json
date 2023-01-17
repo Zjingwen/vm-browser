@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c",
-    "watch": "rollup -c -w"
+    "watch": "rollup -c -w",
+    "test": "jest"
   },
   "author": "Zjingwen",
   "license": "ISC",
@@ -18,5 +19,9 @@
     "node-inspect": "^2.0.0",
     "rollup": "^2.79.1",
     "vm2": "^3.9.13"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "jest": "^29.3.1"
   }
 }
